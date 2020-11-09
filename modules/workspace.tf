@@ -10,6 +10,7 @@ resource "tfe_variable" "ws_variables" {
   category     = each.value["category"]
   workspace_id = each.value["workspace_id"]
   description  = each.value["description"]
+  sensitive    = each.value["sensitive"]
 }
 
 
