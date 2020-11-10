@@ -1,6 +1,7 @@
 resource "tfe_workspace" "ws" {
-  name         = var.name
-  organization = var.org
+  name              = var.name
+  organization      = var.org
+  terraform_version = var.terraform_version
 }
 
 resource "tfe_variable" "ws_variables" {
@@ -39,6 +40,11 @@ variable "ws_variables" {
   }))
 }
 
+variable "terraform_version" {
+  description = "Terraform Version associated with the workspace"
+  type        = string
+  default     = "0.12.29"
+}
 
 output "ws_id" {
   value = tfe_workspace.ws.id
