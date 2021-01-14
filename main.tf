@@ -1,14 +1,12 @@
 terraform {
-  required_version = "~> 0.12"
-
+  required_version = "~> 0.14"
+  required_providers {
+    tfe      = "~> 0.22"
+  }
   backend "remote" {
     organization = "FlamaCorp"
     workspaces {
       name = "tfc-workspaces"
     }
   }
-}
-
-provider "tfe" {
-  version = "~> 0.22"
 }
