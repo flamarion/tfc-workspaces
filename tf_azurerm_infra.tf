@@ -1,6 +1,6 @@
-module "tf_azure_virtual_network" {
+module "tf_azure_infra" {
   source            = "./modules"
-  name              = "tf-azure-virtual-network"
+  name              = "tf-azure-infra"
   org               = var.tfc_org
   terraform_version = "0.14.4"
   ws_variables = {
@@ -8,7 +8,7 @@ module "tf_azure_virtual_network" {
       key          = "ARM_TENANT_ID"
       value        = var.arm_tenant_id
       category     = "env"
-      workspace_id = module.tf_azure_virtual_network.ws_id
+      workspace_id = module.tf_azure_infra.ws_id
       description  = "AzureRM Tenant ID"
       sensitive    = true
     },
@@ -16,23 +16,23 @@ module "tf_azure_virtual_network" {
       key          = "ARM_SUBSCRIPTION_ID"
       value        = var.arm_subscription_id
       category     = "env"
-      workspace_id = module.tf_azure_virtual_network.ws_id
+      workspace_id = module.tf_azure_infra.ws_id
       description  = "AzureRM Subscription ID"
       sensitive    = true
     },
-    arm_sclient_id = {
+    arm_client_id = {
       key          = "ARM_CLIENT_ID"
       value        = var.arm_client_id
       category     = "env"
-      workspace_id = module.tf_azure_virtual_network.ws_id
+      workspace_id = module.tf_azure_infra.ws_id
       description  = "AzureRM Client ID"
       sensitive    = true
     },
-    arm_sclient_secret = {
+    arm_client_secret = {
       key          = "ARM_CLIENT_SECRET"
       value        = var.arm_client_secret
       category     = "env"
-      workspace_id = module.tf_azure_virtual_network.ws_id
+      workspace_id = module.tf_azure_infra.ws_id
       description  = "AzureRM Client Secret"
       sensitive    = true
     }
