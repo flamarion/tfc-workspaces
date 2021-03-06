@@ -4,6 +4,14 @@ module "tfe_azure_es_standalone" {
   org               = var.tfc_org
   terraform_version = "0.14.4"
   ws_variables = {
+    ssh_key = {
+      key          = "cloud_pub"
+      value        = var.pub_ssh_key
+      category     = "terraform"
+      workspace_id = module.tfe_azure_es_standalone.ws_id
+      description  = "SSH Public Key"
+      sensitive    = false
+    },
     arm_tenant_id = {
       key          = "ARM_TENANT_ID"
       value        = var.arm_tenant_id
