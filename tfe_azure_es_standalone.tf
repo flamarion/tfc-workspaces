@@ -43,6 +43,14 @@ module "tfe_azure_es_standalone" {
       workspace_id = module.tfe_azure_es_standalone.ws_id
       description  = "AzureRM Client Secret"
       sensitive    = true
-    }
+    },
+    source_image_id = {
+      key          = "source_image_id"
+      value        = var.source_image_id
+      category     = "terraform"
+      workspace_id = module.tfe_azure_es_standalone.ws_id
+      description  = "Azure IMG ID"
+      sensitive    = false
+    },
   }
 }

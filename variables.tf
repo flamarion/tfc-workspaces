@@ -34,5 +34,20 @@ variable "arm_client_secret" {
   sensitive   = true
 }
 
+variable "source_image_id" {
+  description = "Source IMG id"
+  type        = string
+  sensitive   = true
+}
 
+variable "flama_aws_access_key_id" {
+  description = "AWS Access Key"
+  type        = string
+  sensitive   = true
+}
 
+variable "flama_aws_secret_access_key" {
+  description = "AWS Secret Key"
+  type        = string
+  sensitive   = true
+}
