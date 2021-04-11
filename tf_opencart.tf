@@ -21,12 +21,30 @@ module "tf_opencart" {
       sensitive    = true
     },
     flama_aws_secret_access_key = {
-      key          = "AWS_SECRET_ACESS_KEY"
+      key          = "AWS_SECRET_ACCESS_KEY"
       value        = var.flama_aws_secret_access_key
       category     = "env"
       workspace_id = module.tf_opencart.ws_id
       description  = "AWS Secret Key"
       sensitive    = true
     },
+    cloudflare_api_key = {
+      key          = "cloudflare_api_key"
+      value        = var.cloudflare_api_key
+      category     = "terraform"
+      workspace_id = module.tf_opencart.ws_id
+      description  = "Cloudflare API Token"
+      sensitive    = true
+    },
+    cloudflare_api_token = {
+      key          = "cloudflare_api_token"
+      value        = var.cloudflare_api_token
+      category     = "terraform"
+      workspace_id = module.tf_opencart.ws_id
+      description  = "Cloudflare API Token"
+      sensitive    = true
+    }
   }
 }
+
+

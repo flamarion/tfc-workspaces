@@ -43,7 +43,7 @@ variable "ws_variables" {
 variable "terraform_version" {
   description = "Terraform Version associated with the workspace"
   type        = string
-  default     = "0.14.4"
+  default     = "0.14.10"
 }
 
 output "ws_id" {
